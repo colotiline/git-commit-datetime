@@ -113,4 +113,35 @@ public sealed class GitToolsTests
         Assert.Equal(fileName, changes[1].FilePath);
         Assert.Equal(FileStatus.ModifiedInWorkdir, changes[1].State);
     }
+
+    [Fact]
+    public void Commit_New_Ok()
+    {
+        var repositoryPath = Repository.Init(this.testGitRepositoryPath);
+
+        using var gitRepository = new Repository(repositoryPath);
+
+        var fileName = "temp.txt";
+        var filePath = Path.Combine(this.testGitRepositoryPath, fileName);
+
+        using var textFile = File.CreateText(filePath);
+
+        textFile.WriteLine("Hi!");
+        textFile.Flush();
+
+        var changes = GitTools.GetChanges();
+
+        var date = new System.DateTime(1990, 5, 10);
+        var commitText = "Test commit.";
+
+        GitTools.Commit(changes, commitText, date);
+
+        Assert.Single(gitRepository.Commits);
+        Assert.Equal(commitText + "\n", gitRepository.Commits.Single().Message);
+        Assert.Equal
+        (
+            date, 
+            gitRepository.Commits.Single().Committer.When
+        );
+    }
 }
