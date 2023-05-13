@@ -11,8 +11,8 @@ public sealed class Options
             "date", 
             Required = false, 
             HelpText = 
-                "Date for commit and non-commited files (yyyy-MM-dd)."
-                + " When omitted the current date will be used."
+                "Sets the date (yyyy-MM-dd)."
+                + " The current date will be used when omitted."
         )
     ]
     public string Date { get; init; } = string.Empty;
@@ -24,8 +24,7 @@ public sealed class Options
             "time", 
             Required = true,
             HelpText = 
-                "Time for commit and non-commited files (HH:mm). "
-                + " Seconds are always zero."
+                "Sets the time (HH:mm). Seconds are always zero."
         )
     ]
     
@@ -37,7 +36,7 @@ public sealed class Options
             'm',
             "message",
             Required = true,
-            HelpText = "Commit message."
+            HelpText = "Sets the commit message."
         )
     ]
     public string Message { get; init; } = string.Empty;
