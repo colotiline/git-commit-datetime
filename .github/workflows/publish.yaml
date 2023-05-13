@@ -8,9 +8,7 @@ on:
 
 jobs:
   publish:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -22,4 +20,6 @@ jobs:
     - name: Pack
       run: make pack
     - name: Publish
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
       run: make publish
