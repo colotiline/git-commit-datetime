@@ -13,4 +13,4 @@ pack:
 publish:
 	cd ./nupkg && \
 	dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json  \
-	-k ${{secrets.NUGET_API_KEY}} --skip-duplicate -n true
+	-k ${secrets.NUGET_API_KEY} --skip-duplicate -n true
