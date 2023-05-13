@@ -65,6 +65,8 @@ public sealed class GitToolsTests
         var repositoryPath = Repository.Init(this.testGitRepositoryPath);
 
         using var gitRepository = new Repository(repositoryPath);
+        gitRepository.Config.Add("user.email", "constantine@colotiline.com");
+        gitRepository.Config.Add("user.name", "Constantine Colotiline");
 
         var fileName = "temp.txt";
         var filePath = Path.Combine(this.testGitRepositoryPath, fileName);
@@ -120,6 +122,8 @@ public sealed class GitToolsTests
         var repositoryPath = Repository.Init(this.testGitRepositoryPath);
 
         using var gitRepository = new Repository(repositoryPath);
+        gitRepository.Config.Add("user.email", "constantine@colotiline.com");
+        gitRepository.Config.Add("user.name", "Constantine Colotiline");
 
         var fileName = "temp.txt";
         var filePath = Path.Combine(this.testGitRepositoryPath, fileName);
