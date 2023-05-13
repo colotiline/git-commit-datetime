@@ -6,3 +6,6 @@ test:
 	/p:ExcludeByFile=\"**/*Tests.cs\" \
 	/p:CoverletOutputFormat=lcov \
 	/p:CoverletOutput=./lcov.info
+
+pack:
+	cd src/Colotiline.Git.DateTime.Tool && ETA=true dotnet pack -c Release
