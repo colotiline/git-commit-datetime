@@ -14,3 +14,7 @@ dotnet cdt -d "1990-10-05" -t "01:30" -m "Initial commit."
 `-t` sets the time (HH:mm). Seconds are always zero.
 
 `-m` sets the commit message.
+
+# Additional
+
+Icon author: https://www.iconfinder.com/pongsakornjun.
