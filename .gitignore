@@ -43,6 +43,7 @@ Generated\ Files/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
+lcov.info
 
 # NUnit
 *.VisualState.xml
@@ -396,3 +397,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# MacOS
+.DS_Store
+
+# NuGet
+nupkg
