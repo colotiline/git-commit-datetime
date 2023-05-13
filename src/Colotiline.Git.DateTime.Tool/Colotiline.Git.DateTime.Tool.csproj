@@ -17,7 +17,7 @@
     <PackageId>Colotiline.Git.DateTime.Tool</PackageId>
     
     <PackageTitle>Git DateTime commit (dotnet cdt tool)</PackageTitle>
-    <PackageVersion>0.0.1</PackageVersion>
+    <PackageVersion>0.0.2</PackageVersion>
     <PackageDescription>
       A dotnet tool (cdt) to commit changes with specific datetime. 
       Also changes files create, write and access dates.
@@ -27,7 +27,7 @@
       https://github.com/colotiline/git-commit-datetime
     </PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageReadme>README.md</PackageReadme>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
