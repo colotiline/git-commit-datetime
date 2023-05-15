@@ -5,7 +5,7 @@ specific datetime.
 
 # Usage example
 
-dotnet cdt -d "1990-10-05" -t "01:30" -m "Initial commit."
+cdt -d "1990-10-05" -t "01:30" -m "Initial commit."
 
 # Parameters
 
