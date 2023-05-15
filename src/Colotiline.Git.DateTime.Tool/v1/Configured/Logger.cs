@@ -11,7 +11,8 @@ public static class Logger
 
         Log.Logger =  
             new LoggerConfiguration()
-            .ReadFrom.Configuration(Configuration.Loaded)
+            .MinimumLevel.Information()
+            .WriteTo.Console()
             .CreateLogger();
 
         Loaded = Log.Logger;
