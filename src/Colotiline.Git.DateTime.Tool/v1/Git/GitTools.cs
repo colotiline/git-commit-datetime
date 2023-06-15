@@ -39,11 +39,8 @@ public static class GitTools
 
         foreach (var change in changes)
         {
-            if (change.State == FileStatus.NewInWorkdir)
-            {
-                gitRepository.Index.Add(change.FilePath);
-                gitRepository.Index.Write();
-            }
+            gitRepository.Index.Add(change.FilePath);
+            gitRepository.Index.Write();
         }
 
         gitRepository.Commit
