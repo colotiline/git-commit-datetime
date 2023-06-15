@@ -22,9 +22,10 @@ public sealed class Options
         (
             't', 
             "time", 
-            Required = true,
+            Required = false,
             HelpText = 
                 "Sets the time (HH:mm). Seconds are always zero."
+                + " +8 hours will be used when omitted."
         )
     ]
     

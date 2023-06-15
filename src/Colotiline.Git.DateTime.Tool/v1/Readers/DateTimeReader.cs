@@ -6,9 +6,11 @@ public static class DateTimeReader
 {
     public static System.DateTime Read(string date, string time)
     {
+        
+
         var dateToSet = 
             string.IsNullOrEmpty(date) 
-            ? System.DateTime.UtcNow.Date
+            ? System.DateTime.UtcNow
             : System.DateTime.ParseExact
             (
                 date, 
@@ -16,13 +18,23 @@ public static class DateTimeReader
                 CultureInfo.InvariantCulture
             );
 
-        var timeToSet = System.DateTime.ParseExact
-        (
-            time,
-             "HH:mm",
-              CultureInfo.InvariantCulture
-        );
+        if (string.IsNullOrEmpty(time))
+        {
+            return dateToSet.AddHours(8);
+        }
 
-        return dateToSet.AddHours(timeToSet.Hour).AddMinutes(timeToSet.Minute);
+        var timeToSet = 
+            System.DateTime.ParseExact
+            (
+                time,
+                "HH:mm",
+                CultureInfo.InvariantCulture
+            );
+
+        return 
+            dateToSet
+            .Date
+            .AddHours(timeToSet.Hour)
+            .AddMinutes(timeToSet.Minute);
     }
 }

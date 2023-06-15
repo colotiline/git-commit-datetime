@@ -52,4 +52,19 @@ public sealed class DateTimeReaderTests
             exception.Message
         );
     }
+
+    [Fact]
+    public void Read_AllEmpty_Ok()
+    {
+        var now = System.DateTime.UtcNow;
+
+        var dateTime = DateTimeReader.Read(string.Empty, string.Empty);
+
+        Assert.Equal(now.Year, dateTime.Year);
+        Assert.Equal(now.Month, dateTime.Month);
+        Assert.Equal(now.Day, dateTime.Day);
+        Assert.Equal(now.AddHours(8).Hour, dateTime.Hour);
+        Assert.Equal(now.Minute, dateTime.Minute);
+        Assert.Equal(now.Second, dateTime.Second);
+    }
 }

@@ -1,3 +1,4 @@
 {
-    "dotnet-test-explorer.testProjectPath": "src/Colotiline.Git.DateTime.sln"
+    "dotnet-test-explorer.testProjectPath": "src/Colotiline.Git.DateTime.sln",
+    "dotnet.defaultSolution": "src/Colotiline.Git.DateTime.sln"
 }
