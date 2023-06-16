@@ -39,14 +39,19 @@ public static class GitTools
 
         foreach (var change in changes)
         {
-            if (change.State == FileStatus.Ignored)
+            if 
+            (
+                change.State == FileStatus.Ignored
+                || !File.Exists(change.FilePath)
+            )
             {
                 continue;
             }
 
             gitRepository.Index.Add(change.FilePath);
-            gitRepository.Index.Write();
         }
+
+        gitRepository.Index.Write();
 
         gitRepository.Commit
         (
