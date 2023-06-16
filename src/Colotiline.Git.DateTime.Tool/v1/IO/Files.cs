@@ -16,6 +16,11 @@ public static class Files
                 filesPaths[i]
             );
 
+            if (!File.Exists(filePath))
+            {
+                continue;
+            }
+
             File.SetCreationTimeUtc(filePath, fileDateTime);
             File.SetLastWriteTimeUtc(filePath, fileDateTime);
             File.SetLastAccessTimeUtc(filePath, fileDateTime);
