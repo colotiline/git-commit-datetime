@@ -11,7 +11,8 @@ cdt -d "1990-10-05" -t "01:30" -m "Initial commit."
 
 `-d` sets the date (yyyy-MM-dd). The current date will be used when omitted.
 
-`-t` sets the time (HH:mm). Seconds are always zero.
+`-t` sets the time (HH:mm). Seconds are always zero. +8 hours will be used 
+when omitted.
 
 `-m` sets the commit message.
 
